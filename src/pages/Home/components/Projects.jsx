@@ -1,19 +1,21 @@
+import { Link } from "react-router-dom";
+
 function Projects() {
   const projects = [
     {
-      category: "RESIDENTIAL",
+      category: "Residential",
       title: "Residential Project — Location Placeholder",
       meta: "[XX] kWp · On-Grid · Est. [XXX] kWh/month",
       image: "/images/P1.jpg",
     },
     {
-      category: "INDUSTRIAL",
+      category: "Industrial",
       title: "Industrial Project — Location Placeholder",
       meta: "[XXX] kWp · Grid-Tied · Est. [XXX] kWh/month",
       image: "/images/P2.jpg",
     },
     {
-      category: "COMMERCIAL",
+      category: "Commercial",
       title: "Commercial Project — Location Placeholder",
       meta: "[XXX] kWp · Hybrid · Est. [XXX] kWh/month",
       image: "/images/P3.png",
@@ -22,36 +24,43 @@ function Projects() {
 
   return (
     <section className="w-full bg-[#061C2A]">
-     
+      {/* =====================================================
+          MAIN CONTAINER
+      ====================================================== */}
+
       <div
         className="
           mx-auto
           w-full
           max-w-[1500px]
           px-[20px]
+          pb-[55px]
           pt-[55px]
-          pb-[60px]
 
           sm:px-[28px]
+          sm:pb-[60px]
           sm:pt-[60px]
-          sm:pb-[65px]
 
           md:px-[40px]
-          md:pt-[70px]
-          md:pb-[70px]
+          md:pb-[65px]
+          md:pt-[68px]
 
           lg:px-[55px]
-          lg:pt-[78px]
-          lg:pb-[75px]
+          lg:pb-[70px]
+          lg:pt-[75px]
 
           xl:px-[20px]
-          xl:pt-[80px]
-          xl:pb-[80px]
+          xl:pb-[75px]
+          xl:pt-[78px]
         "
       >
-       
+        {/* =====================================================
+            HEADER
+        ====================================================== */}
+
         <div>
           {/* SMALL LABEL */}
+
           <p
             className="
               m-0
@@ -63,9 +72,7 @@ function Projects() {
               text-[#10B777]
 
               sm:text-[12px]
-
               md:text-[13px]
-
               lg:text-[14px]
             "
           >
@@ -73,22 +80,23 @@ function Projects() {
           </p>
 
           {/* MAIN HEADING */}
+
           <h2
             className="
               m-0
-              mt-[22px]
+              mt-[18px]
               text-[30px]
               font-bold
               leading-[1.1]
               tracking-[-0.025em]
               text-white
 
-              sm:mt-[24px]
+              sm:mt-[20px]
               sm:text-[34px]
 
               md:text-[38px]
 
-              lg:mt-[26px]
+              lg:mt-[22px]
               lg:text-[42px]
 
               xl:text-[44px]
@@ -98,10 +106,11 @@ function Projects() {
           </h2>
 
           {/* DESCRIPTION */}
+
           <p
             className="
               m-0
-              mt-[16px]
+              mt-[14px]
               max-w-[850px]
               text-[12px]
               font-normal
@@ -109,9 +118,7 @@ function Projects() {
               text-[#A8B7BE]
 
               sm:text-[13px]
-
               md:text-[14px]
-
               lg:text-[15px]
             "
           >
@@ -120,31 +127,37 @@ function Projects() {
           </p>
         </div>
 
-       
+        {/* =====================================================
+            FEATURED PROJECT
+        ====================================================== */}
+
         <div
           className="
             relative
-            mt-[42px]
+            mt-[36px]
             h-[300px]
             w-full
             overflow-hidden
             rounded-[8px]
 
-            sm:mt-[46px]
+            sm:mt-[40px]
             sm:h-[340px]
 
             md:h-[390px]
 
-            lg:mt-[50px]
+            lg:mt-[44px]
             lg:h-[430px]
 
             xl:h-[445px]
           "
         >
           {/* FEATURED IMAGE */}
+
           <img
             src="/images/P0.jpg"
             alt="Featured commercial rooftop solar installation"
+            loading="lazy"
+            decoding="async"
             className="
               absolute
               inset-0
@@ -154,12 +167,12 @@ function Projects() {
               transition-transform
               duration-700
               ease-out
-
               hover:scale-[1.015]
             "
           />
 
           {/* DARK OVERLAY */}
+
           <div
             className="
               absolute
@@ -169,43 +182,48 @@ function Projects() {
           />
 
           {/* FEATURED CONTENT */}
+
           <div
             className="
               absolute
-              bottom-[22px]
-              left-[20px]
-              right-[20px]
+              bottom-[20px]
+              left-[18px]
+              right-[18px]
 
-              sm:bottom-[25px]
-              sm:left-[26px]
-              sm:right-[26px]
+              sm:bottom-[23px]
+              sm:left-[24px]
+              sm:right-[24px]
 
-              md:bottom-[28px]
-              md:left-[30px]
-              md:right-[30px]
+              md:bottom-[26px]
+              md:left-[28px]
+              md:right-[28px]
 
-              lg:bottom-[30px]
-              lg:left-[34px]
-              lg:right-[34px]
+              lg:bottom-[28px]
+              lg:left-[32px]
+              lg:right-[32px]
             "
           >
+            {/* YELLOW LINE */}
+
             <div
               className="
-                mb-[10px]
-                h-[7px]
-                w-[260px]
+                mb-[9px]
+                h-[6px]
+                w-[190px]
                 rounded-full
                 bg-[#FFC329]
 
-                sm:w-[350px]
+                sm:w-[300px]
 
-                md:w-[500px]
+                md:w-[430px]
 
-                lg:w-[650px]
+                lg:w-[580px]
 
-                xl:w-[715px]
+                xl:w-[680px]
               "
             />
+
+            {/* LABEL */}
 
             <p
               className="
@@ -216,17 +234,18 @@ function Projects() {
                 text-white
 
                 sm:text-[11px]
-
                 md:text-[12px]
               "
             >
               Featured Project
             </p>
 
+            {/* TITLE */}
+
             <h3
               className="
                 m-0
-                mt-[8px]
+                mt-[7px]
                 max-w-[700px]
                 text-[20px]
                 font-bold
@@ -235,34 +254,31 @@ function Projects() {
                 text-white
 
                 sm:text-[23px]
-
                 md:text-[26px]
-
                 lg:text-[29px]
-
                 xl:text-[31px]
               "
             >
               Commercial Rooftop — [Location Placeholder]
             </h3>
 
+            {/* META */}
+
             <div
               className="
-                mt-[13px]
+                mt-[11px]
                 flex
                 flex-wrap
                 items-center
                 gap-x-[12px]
-                gap-y-[8px]
+                gap-y-[7px]
                 text-[9px]
                 font-medium
                 leading-[1.2]
                 text-[#C0CCD1]
 
                 sm:text-[10px]
-
                 md:text-[11px]
-
                 lg:text-[12px]
               "
             >
@@ -290,56 +306,69 @@ function Projects() {
               </span>
             </div>
 
-            {/* CASE STUDY */}
-            <button
-              type="button"
+            {/* =================================================
+                CASE STUDY -> CONTACT PAGE
+            ================================================== */}
+
+            <Link
+              to="/contact-us"
               className="
+                inline-flex
+                items-center
                 m-0
-                mt-[12px]
+                mt-[13px]
                 text-[10px]
                 font-semibold
                 leading-none
                 text-[#FFC329]
                 transition-all
-                duration-200
+                duration-300
+                hover:translate-x-[4px]
+                hover:text-[#FFD34D]
 
                 sm:text-[11px]
-
                 md:text-[12px]
-
-                hover:translate-x-[3px]
               "
             >
               View Case Study →
-            </button>
+            </Link>
           </div>
         </div>
 
-        
+        {/* =====================================================
+            PROJECT CARDS
+        ====================================================== */}
+
         <div
           className="
-            mt-[14px]
+            mt-[22px]
             grid
             grid-cols-1
-            gap-[25px]
+            gap-[32px]
 
+            sm:mt-[24px]
             sm:grid-cols-2
-            sm:gap-[18px]
+            sm:gap-[24px]
 
+            lg:mt-[26px]
             lg:grid-cols-3
-            lg:gap-[20px]
+            lg:gap-[24px]
 
-            xl:gap-[21px]
+            xl:gap-[26px]
           "
         >
           {projects.map((project) => (
             <article
               key={project.category}
               className="
-                min-w-0
                 group
+                min-w-0
               "
             >
+              {/* =================================================
+                  PROJECT IMAGE
+              ================================================== */}
+
               <div
                 className="
                   relative
@@ -361,6 +390,8 @@ function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="
                     h-full
                     w-full
@@ -368,66 +399,72 @@ function Projects() {
                     transition-transform
                     duration-500
                     ease-out
-
                     group-hover:scale-[1.035]
                   "
                 />
               </div>
 
-              <p
-                className="
-                  m-0
-                  mt-[12px]
-                  text-[10px]
-                  font-semibold
-                  uppercase
-                  leading-[1.2]
-                  tracking-[0.08em]
-                  text-[#10B777]
+              <div className="px-[2px]">
+  {/* CATEGORY */}
+  <p
+    className="
+      m-0
+      mt-[28px]
+      text-[10px]
+      font-semibold
+      leading-[1.2]
+      tracking-[0.08em]
+      text-[#10B777]
 
-                  sm:text-[11px]
+      sm:mt-[28px]
+      sm:text-[11px]
 
-                  md:text-[12px]
-                "
-              >
-                {project.category}
-              </p>
+      md:mt-[30px]
+      md:text-[12px]
+    "
+  >
+    {project.category}
+  </p>
 
-              <h3
-                className="
-                  m-0
-                  mt-[7px]
-                  text-[14px]
-                  font-semibold
-                  leading-[1.3]
-                  text-white
+  {/* TITLE */}
+  <h3
+    className="
+      m-0
+      mt-[7px]
+      max-w-[360px]
+      text-[14px]
+      font-semibold
+      leading-[1.3]
+      text-white
 
-                  sm:text-[15px]
+      sm:text-[16px]
 
-                  md:text-[16px]
+      md:text-[17px]
 
-                  lg:text-[17px]
-                "
-              >
-                {project.title}
-              </h3>
+      lg:text-[18px]
+    "
+  >
+    {project.title}
+  </h3>
 
-              <p
-                className="
-                  m-0
-                  mt-[7px]
-                  text-[10px]
-                  font-normal
-                  leading-[1.45]
-                  text-[#A8B7BE]
+  {/* META */}
+  <p
+    className="
+      m-0
+      mt-[6px]
+      text-[10px]
+      font-normal
+      leading-[1.45]
+      text-[#10B777]
 
-                  sm:text-[11px]
+      sm:text-[11px]
 
-                  md:text-[12px]
-                "
-              >
-                {project.meta}
-              </p>
+      md:text-[12px]
+    "
+  >
+    {project.meta}
+  </p>
+</div>
             </article>
           ))}
         </div>

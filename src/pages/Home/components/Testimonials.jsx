@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 function Testimonials() {
   const testimonials = [
     {
@@ -8,7 +10,7 @@ function Testimonials() {
       location: "Residential",
       project: "[Location Placeholder]",
       system: "[X] kWp",
-      image: "../images/Customers/customer-1.jpg",
+      image: "/images/Customers/customer-1.jpg",
     },
     {
       rating: 5,
@@ -18,7 +20,7 @@ function Testimonials() {
       location: "Commercial",
       project: "[Location Placeholder]",
       system: "[XX] kWp",
-      image: "../images/Customers/customer-2.jpg",
+      image: "/images/Customers/customer-2.jpg",
     },
     {
       rating: 5,
@@ -28,13 +30,13 @@ function Testimonials() {
       location: "Industrial",
       project: "[Location Placeholder]",
       system: "[XXX] kWp",
-      image: "../images/Customers/customer-3.jpg",
+      image: "/images/Customers/customer-3.jpg",
     },
   ];
 
   return (
     <section className="w-full overflow-hidden bg-[#F7F6F1]">
-     
+      {/* HEADER */}
       <div
         className="
           mx-auto
@@ -55,21 +57,27 @@ function Testimonials() {
           xl:px-0
         "
       >
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           {/* LABEL */}
           <p
             className="
               m-0
-              text-[11px]
+              text-[12px]
               font-bold
               uppercase
               leading-[1.2]
               tracking-[0.14em]
               text-[#10A96D]
 
-              sm:text-[12px]
+              sm:text-[13px]
 
-              md:text-[13px]
+              md:text-[14px]
             "
           >
             Client Stories
@@ -80,47 +88,48 @@ function Testimonials() {
             className="
               m-0
               mt-[14px]
-              text-[32px]
+              text-[34px]
               font-bold
               leading-[1.12]
               tracking-[-0.025em]
               text-[#17231F]
 
-              sm:text-[35px]
+              sm:text-[38px]
 
-              md:text-[38px]
+              md:text-[42px]
 
-              lg:text-[40px]
+              lg:text-[44px]
             "
           >
             What Our Customers Say
           </h2>
 
-        
+          {/* DESCRIPTION */}
           <p
             className="
               mx-auto
-              mt-[16px]
-              max-w-[700px]
-              text-[14px]
+              mt-[19px]
+              max-w-[1100px]
+              text-[15px]
+              text-center
               font-normal
               leading-[1.55]
               text-[#737C78]
 
               sm:text-[16px]
 
-              md:text-[14px]
+              md:text-[15px]
 
-              lg:text-[14px]
+              lg:text-[15px]
             "
           >
             The following testimonials are placeholder examples. Real
             customer reviews will be added after verification.
           </p>
-        </div>
+        </motion.div>
       </div>
 
-
+      {/* TESTIMONIAL CARDS */}
       <div
         className="
           mx-auto
@@ -151,8 +160,20 @@ function Testimonials() {
         "
       >
         {testimonials.map((testimonial, index) => (
-          <article
+          <motion.article
             key={index}
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 0.65,
+              delay: index * 0.12,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              y: -5,
+              transition: { duration: 0.25 },
+            }}
             className="
               flex
               min-w-0
@@ -164,6 +185,9 @@ function Testimonials() {
               bg-white
               px-[20px]
               py-[19px]
+              transition-shadow
+              duration-300
+              hover:shadow-[0_10px_30px_rgba(23,35,31,0.08)]
 
               sm:min-h-[325px]
               sm:px-[22px]
@@ -180,21 +204,21 @@ function Testimonials() {
               xl:min-h-[345px]
             "
           >
-           
+            {/* STARS */}
             <div className="flex items-center gap-[4px]">
               {Array.from({ length: testimonial.rating }).map(
                 (_, starIndex) => (
                   <span
                     key={starIndex}
                     className="
-                      text-[16px]
+                      text-[17px]
                       font-medium
                       leading-none
                       text-[#F5B544]
 
-                      sm:text-[17px]
+                      sm:text-[18px]
 
-                      md:text-[20px]
+                      md:text-[21px]
                     "
                   >
                     ★
@@ -203,7 +227,7 @@ function Testimonials() {
               )}
             </div>
 
-       
+            {/* QUOTE ICON */}
             <div
               className="
                 mt-[13px]
@@ -225,31 +249,31 @@ function Testimonials() {
               “
             </div>
 
-           
+            {/* QUOTE */}
             <p
               className="
                 m-0
                 mt-[10px]
                 max-w-full
-                text-[12px]
+                text-[14px]
                 font-normal
                 italic
                 leading-[1.6]
                 text-[#596562]
 
-                sm:text-[12.5px]
+                sm:text-[14px]
 
-                md:text-[15px]
+                md:text-[16px]
 
-                lg:text-[12px]
+                lg:text-[14px]
 
-                xl:text-[15.5px]
+                xl:text-[16px]
               "
             >
               {testimonial.quote}
             </p>
 
-            
+            {/* CUSTOMER INFO */}
             <div
               className="
                 mt-auto
@@ -267,6 +291,8 @@ function Testimonials() {
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
+                loading="lazy"
+                decoding="async"
                 className="
                   h-[45px]
                   w-[45px]
@@ -287,12 +313,12 @@ function Testimonials() {
                   className="
                     m-0
                     truncate
-                    text-[11px]
+                    text-[12px]
                     font-semibold
                     leading-[1.25]
                     text-[#17231F]
 
-                    sm:text-[11.5px]
+                    sm:text-[12px]
 
                     md:text-[15px]
                   "
@@ -305,12 +331,12 @@ function Testimonials() {
                     m-0
                     mt-[5px]
                     truncate
-                    text-[8px]
+                    text-[9px]
                     font-normal
                     leading-[1.35]
                     text-[#7E8783]
 
-                    sm:text-[8.5px]
+                    sm:text-[9px]
 
                     md:text-[11px]
                   "
@@ -320,7 +346,7 @@ function Testimonials() {
                 </p>
               </div>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function FAQ() {
   const faqs = [
@@ -8,7 +9,8 @@ function FAQ() {
         "Savings depend on your current electricity consumption, local tariff rates, system size, and available sunlight. A properly designed system can offset 60–80% of a typical household's electricity bill. Use our Solar Savings Calculator for a personalised estimate.",
     },
     {
-      question: "What is the typical payback period for a solar installation?",
+      question:
+        "What is the typical payback period for a solar installation?",
       answer:
         "Payback periods vary based on system cost, energy savings, and available incentives. Estimates are indicative only and depend on individual consumption patterns, tariff structures, and financing arrangements. Our team provides detailed ROI projections as part of every proposal.",
     },
@@ -29,8 +31,7 @@ function FAQ() {
     },
   ];
 
-  // First FAQ open initially, matching the reference
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const toggleFAQ = (index) => {
     setOpenIndex((currentIndex) =>
@@ -40,47 +41,43 @@ function FAQ() {
 
   return (
     <section className="w-full overflow-hidden bg-[#061E2D]">
- 
+      {/* HEADER */}
       <div
         className="
           mx-auto
           w-full
-          max-w-[1180px]
           px-[20px]
-          pb-[38px]
-          pt-[38px]
+          pb-[36px]
+          pt-[42px]
 
           sm:px-[28px]
-          sm:pb-[42px]
-          sm:pt-[42px]
+          sm:pb-[40px]
+          sm:pt-[46px]
 
           md:px-[40px]
-          md:pb-[46px]
-          md:pt-[46px]
+          md:pb-[44px]
+          md:pt-[50px]
 
           lg:px-[50px]
-          lg:pb-[50px]
-          lg:pt-[48px]
-
-          xl:px-[60px]
+          lg:pb-[48px]
+          lg:pt-[54px]
         "
       >
-        
         <div className="text-center">
           {/* LABEL */}
           <p
             className="
               m-0
-              text-[9px]
+              text-[10px]
               font-semibold
               uppercase
               leading-[1.2]
               tracking-[0.15em]
               text-[#08B477]
 
-              sm:text-[10px]
+              sm:text-[11px]
 
-              md:text-[11px]
+              md:text-[12px]
             "
           >
             FAQ
@@ -90,7 +87,7 @@ function FAQ() {
           <h1
             className="
               m-0
-              mt-[12px]
+              mt-[10px]
               text-[30px]
               font-bold
               leading-[1.1]
@@ -107,110 +104,120 @@ function FAQ() {
             Frequently Asked Questions
           </h1>
         </div>
+      </div>
 
-      
-        <div
-          className="
-            mx-auto
-            mt-[34px]
-            flex
-            w-full
-            max-w-[1100px]
-            flex-col
-            gap-[6px]
+      {/* FAQ CONTAINER */}
+      <div
+        className="
+          mx-auto
+          w-[calc(100%-40px)]
+          max-w-[1000px]
 
-            sm:mt-[38px]
-            sm:gap-[7px]
+          sm:w-[calc(100%-56px)]
 
-            md:mt-[42px]
-            md:gap-[8px]
-          "
-        >
+          md:w-[calc(100%-80px)]
+
+          lg:w-[800px]
+        "
+      >
+        <div className="w-full">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
               <article
                 key={index}
-                className={`
+                className="
                   w-full
                   overflow-hidden
-                  rounded-[6px]
                   border
                   border-[#203A49]
-                  bg-transparent
-                  transition-all
-                  duration-300
-                  ease-out
-                  ${isOpen ? "min-h-[125px]" : "min-h-[58px]"}
-                `}
+                  border-b-0
+                  last:border-b
+                "
               >
-               
+                {/* QUESTION */}
                 <button
                   type="button"
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={isOpen}
                   className="
                     flex
-                    min-h-[58px]
+                    min-h-[65px]
                     w-full
                     items-center
                     justify-between
-                    gap-[20px]
-                    px-[17px]
-                    py-[15px]
-                    text-left
+                    gap-[30px]
+                    py-[16px]
+                    pl-[5px]
+                    pr-[40px]
 
-                    sm:px-[18px]
+                    sm:min-h-[68px]
+                    sm:pl-[42px]
+                    sm:pr-[42px]
 
-                    md:px-[20px]
+                    md:min-h-[70px]
+                    md:pl-[44px]
+                    md:pr-[44px]
+
+                    lg:min-h-[66px]
+                    lg:pl-[40px]
+                    lg:pr-[40px]
                   "
                 >
                   {/* QUESTION */}
                   <span
                     className="
-                      text-[11px]
-                      font-semibold
-                      leading-[1.35]
+                      min-w-0
+                      pr-[10px]
+                      pl-[20px]
+                      text-left
+                      font-manrope
+                      text-[15px]
+                      font-medium
+                      leading-[1.4]
                       text-white
 
-                      sm:text-[12px]
+                      sm:text-[16px]
 
-                      md:text-[13px]
+                      md:text-[17px]
+
+                      lg:text-[17px]
                     "
                   >
                     {faq.question}
                   </span>
 
+                  {/* PLUS / MINUS */}
                   <span
                     className="
                       flex
-                      h-[23px]
-                      w-[23px]
+                      h-[30px]
+                      pr-[20px]
+                      w-[30px]
                       shrink-0
                       items-center
                       justify-center
-                      rounded-full
-                      border
-                      border-[#355160]
-                      text-[17px]
+                      font-roboto
+                      text-[29px]
                       font-light
                       leading-none
-                      text-[#D0D9DD]
-                      transition-transform
-                      duration-300
+                      text-white
                     "
+                    aria-hidden="true"
                   >
-                    <span className="-translate-y-[1px]">
+                    <span className="-translate-y-[2px]">
                       {isOpen ? "−" : "+"}
                     </span>
                   </span>
                 </button>
 
-            
+                {/* ANSWER */}
                 <div
                   className={`
                     grid
+                    pl-[20px]
+                    pb-[10px]
                     transition-all
                     duration-300
                     ease-out
@@ -222,65 +229,94 @@ function FAQ() {
                   `}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <p
-                      className="
-                        m-0
-                        px-[17px]
-                        pb-[18px]
-                        text-[10px]
-                        font-normal
-                        leading-[1.55]
-                        text-[#8FA0A8]
+                    <div className="border-t border-[#203A49]">
+                      <p
+                        className="
+                          m-0
+                          px-[40px]
+                          pb-[40px]
+                          
+                          pt-[17px]
+                          text-left
+                          font-manrope
+                          text-[13px]
+                          font-normal
+                          leading-[1.65]
+                          text-[#9BAEB7]
 
-                        sm:px-[18px]
-                        sm:text-[10.5px]
+                          sm:px-[42px]
+                          sm:pb-[42px]
+                          sm:text-[14px]
 
-                        md:px-[20px]
-                        md:text-[11px]
+                          md:px-[44px]
+                          md:pb-[44px]
+                          md:text-[15px]
 
-                        lg:max-w-[1000px]
-                      "
-                    >
-                      {faq.answer}
-                    </p>
+                          lg:px-[40px]
+                          lg:pb-[43px]
+                          lg:text-[15px]
+                        "
+                      >
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </article>
             );
           })}
         </div>
+      </div>
 
-       
-        <div
+      {/* CONTACT LINK */}
+      <div
+        className="
+          flex
+          justify-center
+          px-[20px]
+          pb-[42px]
+          pt-[34px]
+
+          sm:pb-[46px]
+          sm:pt-[36px]
+
+          md:pb-[50px]
+          md:pt-[38px]
+        "
+      >
+        <Link
+          to="/contact-us"
           className="
-            pt-[28px]
+            inline-flex
+            items-center
+            justify-center
             text-center
+            font-roboto
+            text-[11px]
+            font-normal
+            leading-[1.3]
+            text-[#0CAF73]
+            transition-colors
+            duration-200
+            hover:text-[#FFC329]
 
-            sm:pt-[30px]
+            sm:text-[12px]
 
-            md:pt-[32px]
+            md:text-[13px]
           "
         >
-          <p
-            className="
-              m-0
-              text-[10px]
-              font-normal
-              leading-[1.3]
-              text-[#0CAF73]
+          <span className="font-semibold">
+            Still have questions?
+          </span>
 
-              sm:text-[11px]
-
-              md:text-[12px]
-            "
-          >
-            <span className="font-semibold">
-              Still have questions?
-            </span>{" "}
+          <span className="ml-[4px]">
             Contact our experts
-            <span className="ml-[5px] text-[13px]">→</span>
-          </p>
-        </div>
+          </span>
+
+          <span className="ml-[5px] text-[15px]">
+            →
+          </span>
+        </Link>
       </div>
     </section>
   );

@@ -31,39 +31,60 @@ const BackToTop = () => {
         <motion.button
           type="button"
           onClick={scrollToTop}
-          initial={{ opacity: 0, y: 15, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 15, scale: 0.8 }}
+          aria-label="Back to top"
+          initial={{
+            opacity: 0,
+            y: 20,
+            scale: 0.8,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+          }}
+          exit={{
+            opacity: 0,
+            y: 20,
+            scale: 0.8,
+          }}
           whileHover={{
             scale: 1.08,
-            backgroundColor: "#ffbd21",
+            backgroundColor: "#FFC629",
           }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.25 }}
-          aria-label="Back to top"
+          whileTap={{
+            scale: 0.94,
+          }}
+          transition={{
+            duration: 0.25,
+          }}
           className="
             fixed
             bottom-6
             right-5
-            z-[100]
+            z-[9999]
+            isolate
             flex
             h-11
             w-11
             items-center
             justify-center
             rounded-full
+            border-2
+            border-black
             bg-[#009b62]
-            text-white
-            shadow-[0_6px_20px_rgba(0,0,0,0.18)]
-            transition-colors
-            duration-300
+            text-black
+            shadow-[0_6px_20px_rgba(0,0,0,0.25)]
             sm:bottom-7
             sm:right-7
             sm:h-12
             sm:w-12
           "
         >
-          <ArrowUp size={19} strokeWidth={2.5} />
+          <ArrowUp
+            size={21}
+            strokeWidth={3.2}
+            className="relative z-10 text-black"
+          />
         </motion.button>
       )}
     </AnimatePresence>

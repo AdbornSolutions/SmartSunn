@@ -1,11 +1,4 @@
-// All text + image paths for the Services page live here.
-//
-// PHOTOS: save the pictures from the design into  public/images/services/  with the
-// file names below. Until a file exists, its "imageFallback" (a picture that is
-// already in the project) is shown instead.
-//
-// Use **double asterisks** around words that should be bold.
-// A "\n" inside a paragraph = new line WITHOUT a gap; a new paragraph = a gap.
+
 
 export const servicesHero = {
   eyebrow: "SmartSun Power",
@@ -40,7 +33,7 @@ export const serviceBlocks = [
       "Make your home more energy independent with a rooftop solar system designed to significantly reduce your monthly electricity bills.\nOur residential solar solutions are customized according to your energy consumption, roof space and requirements.",
       "Our residential solar systems are designed for seamless integration with your home while delivering dependable energy throughout the year. With smart system sizing, quality components and professional installation, we help homeowners lower their electricity expenses, improve energy independence and enjoy reliable solar power for the long term.",
     ],
-    image: "/images/services/residential.jpg",
+    image: "/images/services/residential.png",
     imageFallback: "/images/residential-solar.jpg",
     imageAlt: "Family looking at their home with rooftop solar at sunset",
     tone: "grey",
@@ -55,7 +48,7 @@ export const serviceBlocks = [
       "Power your commercial establishment with an efficiently designed solar system focused on **maximum savings and faster ROI**.\nWe provide solar solutions for offices, hospitals, schools, institutions and other commercial establishments while ensuring minimal disruption to daily operations.",
       "Our commercial solar systems are engineered to make the most of available rooftop and site space while matching your business’s energy consumption patterns. With high-quality components, efficient installation and performance-focused system design, we help businesses lower operating costs, improve energy efficiency and achieve long-term savings without affecting their day-to-day operations.",
     ],
-    image: "/images/services/commercial.jpg",
+    image: "/images/services/commercial.png",
     imageFallback: "/images/commercial-solar.jpg",
     imageAlt: "Engineer with a tablet on a commercial rooftop solar plant",
     tone: "white",
@@ -71,7 +64,7 @@ export const serviceBlocks = [
       "Industrial facilities require solar systems designed around their specific energy consumption, load patterns and available space.\nSmarttsun Power provides customized **rooftop and ground-mounted solar plants** engineered for long-term performance, safety and scalability.",
       "Our industrial solar solutions are planned to maximize energy generation while seamlessly integrating with ongoing operations. From detailed site assessment and system design to installation, commissioning and maintenance, we deliver robust solar plants that help industries reduce energy costs, improve efficiency and achieve greater energy independence over the long term.",
     ],
-    image: "/images/services/industrial.jpg",
+    image: "/images/services/Industrial-Solar.png",
     imageFallback: "/images/P2.jpg",
     imageAlt: "Rows of ground-mounted solar panels under a blue sky",
     tone: "grey",

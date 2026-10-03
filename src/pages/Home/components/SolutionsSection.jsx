@@ -91,7 +91,7 @@ function SolutionCard({ item }) {
 function SolutionsSection() {
   return (
     <section className="bg-[#051B2B]">
-      <div className="mx-auto w-full max-w-[1600px] px-5 pb-[67px] pt-[64px] lg:px-0 lg:pt-[98px]">
+      <div className="mx-auto w-full max-w-[1600px] px-5 pb-[67px] pt-[64px] lg:w-[88.3%] lg:px-0 lg:pt-[98px]">
         <p className="font-manrope text-[16.8px] font-semibold leading-[22px] text-[#1FB877]">
           Our Solutions
         </p>

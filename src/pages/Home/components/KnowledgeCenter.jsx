@@ -168,7 +168,7 @@ function KnowledgeCenter() {
               "
             >
               <img
-                src="/images/K0.jpg"
+                src="../images/KnowledgeC/K0.jpg"
                 alt="How Solar Panels Actually Work"
                 className="
                   h-full
@@ -243,8 +243,8 @@ function KnowledgeCenter() {
                   md:text-[11px]
                 "
               >
-                <span className="flex items-center gap-[4px]">
-                  <span className="text-[12px]">◷</span>
+                <span className="flex items-center text-[#08AC6D] gap-[4px]">
+                  <span className="text-[12px] text-[#08AC6D]">◷</span>
                   8 min read
                 </span>
 
@@ -348,14 +348,14 @@ function KnowledgeCenter() {
                     text-[9px]
                     font-normal
                     leading-none
-                    text-[#8B9290]
+                    text-[#08AC6D]
 
                     sm:text-[10px]
 
                     md:text-[11px]
                   "
                 >
-                  <span className="text-[11px]">◷</span>
+                  <span className="text-[11px] text-[#08AC6D]">◷</span>
                   {article.readTime}
                 </p>
               </div>

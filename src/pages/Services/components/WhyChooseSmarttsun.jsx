@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 
 const WhyChooseSmarttsun = ({ data }) => {
   const steps = data?.steps || [];
-
-  return (
+return (
     <section className="w-full bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
 
@@ -19,7 +18,7 @@ const WhyChooseSmarttsun = ({ data }) => {
             {data?.eyebrow || "Why Choose Smarttsun Power?"}
           </p>
 
-          <h2 className="mx-auto max-w-[1000px] text-[30px] font-medium leading-[1.2] tracking-[-0.5px] text-[#050505] sm:text-[38px] lg:text-[40px]">
+          <h2 className="mx-auto max-w-[1380px] text-[30px] font-medium leading-[1.2] tracking-[-0.5px] text-[#050505] sm:text-[38px] lg:text-[40px]">
             {data?.title ||
               "More Than Installation. A Complete Solar Partnership."}
           </h2>

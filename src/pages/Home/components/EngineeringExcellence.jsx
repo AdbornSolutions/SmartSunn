@@ -89,16 +89,16 @@ function EngineeringExcellence() {
         bg-white
         px-[20px]
         pb-[65px]
-        pt-[55px]
+        pt-[40px]
         sm:px-[28px]
         sm:pb-[75px]
-        sm:pt-[65px]
+        sm:pt-[48px]
         md:px-[40px]
         md:pb-[85px]
-        md:pt-[75px]
+        md:pt-[55px]
         lg:px-[55px]
         lg:pb-[100px]
-        lg:pt-[85px]
+        lg:pt-[60px]
       "
     >
       {/* =========================================
@@ -106,6 +106,7 @@ function EngineeringExcellence() {
       ========================================= */}
 
       <div className="mx-auto w-full max-w-[1200px] text-center">
+        {/* Small green heading */}
 
         <p
           className="
@@ -123,6 +124,8 @@ function EngineeringExcellence() {
           Why SmartSun
         </p>
 
+        {/* Main heading */}
+
         <h2
           className="
             !m-0
@@ -130,39 +133,40 @@ function EngineeringExcellence() {
             font-manrope
             !text-[28px]
             font-bold
-            !leading-[1.25]
-            tracking-[-0.4px]
-            text-[#111]
+            !leading-[1.2]
+            tracking-[-0.5px]
+            text-[#061E2D]
             sm:!text-[32px]
             md:!text-[36px]
-            lg:mt-[25px]
-            lg:!text-[39px]
-            lg:!leading-[1.25]
+            lg:mt-[26px]
+            lg:!text-[40px]
+            lg:!leading-[48px]
           "
         >
           Engineering Excellence Meets Clean Energy
         </h2>
 
+        {/* Description */}
+
         <p
           className="
             mx-auto
-            mt-[16px]
-            max-w-[850px]
+            mt-[20px]
+            max-w-[1050px]
             font-roboto
             !text-[15px]
             !leading-[1.65]
-            text-[#555]
+            text-[#666]
             sm:!text-[16px]
             md:!text-[16.5px]
-            lg:mt-[22px]
+            lg:mt-[25px]
             lg:!text-[17px]
-            lg:!leading-[1.7]
+            lg:!leading-[29px]
           "
         >
           We combine cutting-edge technology with expert craftsmanship to
           deliver solar systems that perform flawlessly for decades.
         </p>
-
       </div>
 
       {/* =========================================
@@ -189,7 +193,6 @@ function EngineeringExcellence() {
           xl:gap-[80px]
         "
       >
-
         {/* =========================================
             DESKTOP IMAGE
         ========================================= */}
@@ -197,7 +200,7 @@ function EngineeringExcellence() {
         <div
           className="
             sticky
-            top-[110px]
+            top-[10px]
             hidden
             aspect-[4/4.6]
             w-full
@@ -344,9 +347,7 @@ function EngineeringExcellence() {
                   {feature.description}
                 </p>
 
-                {/* =================================
-                    MOBILE IMAGE
-                ================================= */}
+               
 
                 <div
                   className="
@@ -377,12 +378,10 @@ function EngineeringExcellence() {
                     "
                   />
                 </div>
-
               </li>
             );
           })}
         </ol>
-
       </div>
     </section>
   );

@@ -1,11 +1,11 @@
 // All text + image paths for the About Us page live here.
 // Put the images below inside  public/images/about/  (or change the paths).
 export const aboutImages = {
-  whoTeam: "/images/about/who-team.jpg", // team with hard hats + laptop
-  whoWalking: "/images/about/who-walking.jpg", // three workers walking
-  approach: "/images/about/approach.jpg", // two workers on the roof with laptop
-  journeyGroup: "/images/about/journey-group.jpg", // group of people with hard hats
-  journeyWorker: "/images/about/journey-worker.jpg", // worker with tablet on panels
+  whoTeam: "/images/about/who-team.png", // team with hard hats + laptop
+  whoWalking: "/images/about/who-walking.png", // three workers walking
+  approach: "/images/about/approach.png", // two workers on the roof with laptop
+  journeyGroup: "/images/about/journey-group.png", // group of people with hard hats
+  journeyWorker: "/images/about/journey-worker.png", // worker with tablet on panels
   supportIcon: "/images/about/support-solar.png", // little 3D solar panel + sun
   bgApproach: "/images/about/bg-approach.png", // faint line-art (turbines) for the grey section
   bgCommitment: "/images/about/bg-commitment.png", // faint line-art (turbines + house)
