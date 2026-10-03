@@ -22,13 +22,12 @@ function KnowledgeCenter() {
       category: "MAINTENANCE",
       title: "Solar Maintenance Checklist & Schedule",
       readTime: "4 min read",
-    image: "../images/KnowledgeC/K4.jpg",
+      image: "../images/KnowledgeC/K4.jpg",
     },
   ];
 
   return (
     <section className="w-full overflow-hidden bg-white">
-    
       <div
         className="
           mx-auto
@@ -51,9 +50,16 @@ function KnowledgeCenter() {
           lg:pt-[52px]
 
           xl:px-0
+
+          min-[1600px]:max-w-[1500px]
+          min-[1600px]:pb-[85px]
+          min-[1600px]:pt-[72px]
         "
       >
-     
+        {/* =====================================================
+            HEADER
+        ====================================================== */}
+
         <div>
           {/* LABEL */}
           <p
@@ -67,8 +73,10 @@ function KnowledgeCenter() {
               text-[#0CAF70]
 
               sm:text-[11px]
-
               md:text-[12px]
+
+              min-[1600px]:text-[15px]
+              min-[1600px]:tracking-[0.17em]
             "
           >
             Knowledge Center
@@ -92,6 +100,11 @@ function KnowledgeCenter() {
               md:text-[40px]
 
               lg:text-[43px]
+
+              min-[1600px]:mt-[20px]
+              min-[1600px]:max-w-[850px]
+              min-[1600px]:text-[58px]
+              min-[1600px]:leading-[1.06]
             "
           >
             Learn Solar. Make
@@ -111,10 +124,13 @@ function KnowledgeCenter() {
               text-[#737B78]
 
               sm:text-[12px]
-
               md:text-[13px]
-
               lg:text-[14px]
+
+              min-[1600px]:mt-[20px]
+              min-[1600px]:max-w-[800px]
+              min-[1600px]:text-[18px]
+              min-[1600px]:leading-[1.65]
             "
           >
             Technical guides, buyer's resources, and in-depth articles on
@@ -122,7 +138,10 @@ function KnowledgeCenter() {
           </p>
         </div>
 
-      
+        {/* =====================================================
+            ARTICLES GRID
+        ====================================================== */}
+
         <div
           className="
             mt-[40px]
@@ -138,9 +157,17 @@ function KnowledgeCenter() {
             lg:grid-cols-[1.15fr_1fr_1fr]
             lg:gap-x-[24px]
             lg:gap-y-[30px]
+
+            min-[1600px]:mt-[65px]
+            min-[1600px]:grid-cols-[1.15fr_1fr_1fr]
+            min-[1600px]:gap-x-[36px]
+            min-[1600px]:gap-y-[42px]
           "
         >
-      
+          {/* =================================================
+              FEATURED ARTICLE
+          ================================================== */}
+
           <article
             className="
               min-w-0
@@ -152,6 +179,7 @@ function KnowledgeCenter() {
             "
           >
             {/* FEATURED IMAGE */}
+
             <div
               className="
                 relative
@@ -161,10 +189,11 @@ function KnowledgeCenter() {
                 rounded-[10px]
 
                 sm:h-[230px]
-
                 md:h-[250px]
-
                 lg:h-[260px]
+
+                min-[1600px]:h-[390px]
+                min-[1600px]:rounded-[14px]
               "
             >
               <img
@@ -183,8 +212,16 @@ function KnowledgeCenter() {
             </div>
 
             {/* FEATURED CONTENT */}
-            <div className="mt-[16px]">
+
+            <div
+              className="
+                mt-[16px]
+
+                min-[1600px]:mt-[22px]
+              "
+            >
               {/* CATEGORY */}
+
               <p
                 className="
                   m-0
@@ -196,14 +233,17 @@ function KnowledgeCenter() {
                   text-[#08AC6D]
 
                   sm:text-[11px]
-
                   md:text-[12px]
+
+                  min-[1600px]:text-[15px]
+                  min-[1600px]:tracking-[0.15em]
                 "
               >
                 Solar Basics
               </p>
 
               {/* TITLE */}
+
               <h2
                 className="
                   m-0
@@ -216,16 +256,20 @@ function KnowledgeCenter() {
                   text-[#17251F]
 
                   sm:text-[22px]
-
                   md:text-[24px]
-
                   lg:text-[25px]
+
+                  min-[1600px]:mt-[14px]
+                  min-[1600px]:max-w-[850px]
+                  min-[1600px]:text-[32px]
+                  min-[1600px]:leading-[1.18]
                 "
               >
                 How Solar Panels Actually Work: A Technical Guide
               </h2>
 
               {/* META */}
+
               <div
                 className="
                   mt-[12px]
@@ -239,11 +283,14 @@ function KnowledgeCenter() {
                   text-[#89918E]
 
                   sm:text-[10px]
-
                   md:text-[11px]
+
+                  min-[1600px]:mt-[17px]
+                  min-[1600px]:gap-x-[18px]
+                  min-[1600px]:text-[14px]
                 "
               >
-                <span className="flex items-center text-[#08AC6D] gap-[4px]">
+                <span className="flex items-center gap-[4px] text-[#08AC6D]">
                   <span className="text-[12px] text-[#08AC6D]">◷</span>
                   8 min read
                 </span>
@@ -256,7 +303,10 @@ function KnowledgeCenter() {
             </div>
           </article>
 
-         
+          {/* =================================================
+              OTHER ARTICLES
+          ================================================== */}
+
           {articles.map((article) => (
             <article
               key={article.category}
@@ -266,6 +316,7 @@ function KnowledgeCenter() {
               "
             >
               {/* IMAGE */}
+
               <div
                 className="
                   h-[145px]
@@ -274,10 +325,11 @@ function KnowledgeCenter() {
                   rounded-[8px]
 
                   sm:h-[135px]
-
                   md:h-[145px]
-
                   lg:h-[135px]
+
+                  min-[1600px]:h-[205px]
+                  min-[1600px]:rounded-[11px]
                 "
               >
                 <img
@@ -296,8 +348,16 @@ function KnowledgeCenter() {
               </div>
 
               {/* CONTENT */}
-              <div className="mt-[11px]">
+
+              <div
+                className="
+                  mt-[11px]
+
+                  min-[1600px]:mt-[15px]
+                "
+              >
                 {/* CATEGORY */}
+
                 <p
                   className="
                     m-0
@@ -309,14 +369,17 @@ function KnowledgeCenter() {
                     text-[#08AC6D]
 
                     sm:text-[10px]
-
                     md:text-[11px]
+
+                    min-[1600px]:text-[14px]
+                    min-[1600px]:tracking-[0.15em]
                   "
                 >
                   {article.category}
                 </p>
 
                 {/* TITLE */}
+
                 <h3
                   className="
                     m-0
@@ -328,16 +391,19 @@ function KnowledgeCenter() {
                     text-[#17251F]
 
                     sm:text-[15px]
-
                     md:text-[16px]
-
                     lg:text-[15px]
+
+                    min-[1600px]:mt-[10px]
+                    min-[1600px]:text-[21px]
+                    min-[1600px]:leading-[1.25]
                   "
                 >
                   {article.title}
                 </h3>
 
                 {/* READ TIME */}
+
                 <p
                   className="
                     m-0
@@ -351,11 +417,16 @@ function KnowledgeCenter() {
                     text-[#08AC6D]
 
                     sm:text-[10px]
-
                     md:text-[11px]
+
+                    min-[1600px]:mt-[12px]
+                    min-[1600px]:gap-[7px]
+                    min-[1600px]:text-[14px]
                   "
                 >
-                  <span className="text-[11px] text-[#08AC6D]">◷</span>
+                  <span className="text-[11px] text-[#08AC6D]">
+                    ◷
+                  </span>
                   {article.readTime}
                 </p>
               </div>

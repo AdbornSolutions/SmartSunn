@@ -1,42 +1,71 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import FadeIn from "../../../components/common/FadeIn";
 
 const arial = "[font-family:Arial,Helvetica,sans-serif]";
 
-// "Solar EPC Solutions" timeline.
-// - hover a step -> active
-// - tap/click/focus -> active
-// - only one step active at a time
-// - step 1 active by default
 function EpcProcess({ tag, title, text, steps, activeImage }) {
   const [active, setActive] = useState(0);
+  const itemRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(Number(entry.target.dataset.index));
+          }
+        });
+      },
+      {
+        rootMargin: "-45% 0px -45% 0px",
+        threshold: 0,
+      }
+    );
+
+    itemRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
       id="epc"
       className="
         relative
+        w-full
         overflow-hidden
-        bg-white
+        bg-[#F5F2EC]
         py-[52px]
         sm:py-[60px]
         lg:py-[76px]
+        min-[1600px]:py-[95px]
       "
     >
-      <div className="mx-auto w-[89%] max-w-[1400px]">
+      <div
+        className="
+          mx-auto
+          w-[89%]
+          max-w-[1400px]
+          min-[1600px]:max-w-[1550px]
+        "
+      >
         {/* =====================================================
             HEADING
         ===================================================== */}
+
         <FadeIn className="text-center">
           <p
             className="
               text-[14px]
               font-medium
-          
               leading-[22px]
               text-[#364253]
               sm:text-[15px]
+              min-[1600px]:text-[17px]
+              min-[1600px]:leading-[25px]
             "
           >
             {tag}
@@ -46,7 +75,7 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
             className="
               mx-auto
               mt-[14px]
-              max-w-[1100px]
+              max-w-[1150px]
               text-[28px]
               font-semibold
               leading-[1.2]
@@ -57,6 +86,10 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
               lg:mt-[20px]
               lg:text-[35px]
               lg:leading-[50px]
+              min-[1600px]:mt-[24px]
+              min-[1600px]:max-w-[1350px]
+              min-[1600px]:text-[48px]
+              min-[1600px]:leading-[1.2]
             "
           >
             {title}
@@ -74,7 +107,10 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
               sm:leading-[26px]
               lg:mt-[20px]
               lg:text-[16px]
-
+              min-[1600px]:mt-[25px]
+              min-[1600px]:max-w-[1200px]
+              min-[1600px]:text-[18px]
+              min-[1600px]:leading-[30px]
             "
           >
             {text}
@@ -84,6 +120,7 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
         {/* =====================================================
             TIMELINE
         ===================================================== */}
+
         <FadeIn delay={0.1} y={22} amount={0.08}>
           <ol
             className="
@@ -94,12 +131,15 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
               bg-[#F5F2EC]
               px-[12px]
               py-[20px]
-              shadow-[0_8px_30px_rgba(16,30,51,0.04)]
               sm:px-[20px]
               sm:py-[24px]
               lg:mt-[42px]
               lg:px-[30px]
               lg:py-[28px]
+              min-[1600px]:mt-[55px]
+              min-[1600px]:max-w-[1000px]
+              min-[1600px]:px-[40px]
+              min-[1600px]:py-[38px]
             "
           >
             {steps.map((step, i) => {
@@ -109,6 +149,10 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
               return (
                 <li
                   key={step.title}
+                  ref={(el) => {
+                    itemRefs.current[i] = el;
+                  }}
+                  data-index={i}
                   className="
                     relative
                     flex
@@ -120,11 +164,14 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                     sm:pb-[24px]
                     lg:gap-5
                     lg:pb-[28px]
+                    min-[1600px]:gap-6
+                    min-[1600px]:pb-[35px]
                   "
                 >
                   {/* =================================================
                       CONNECTING LINE
                   ================================================= */}
+
                   <span
                     aria-hidden="true"
                     className={`
@@ -133,17 +180,22 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                       top-[14px]
                       w-[2px]
                       bg-[#F6BA3B]
+
                       ${
                         isLast
                           ? "bottom-[14px]"
                           : "-bottom-[14px]"
                       }
+
+                      min-[1600px]:left-[15px]
+                      min-[1600px]:top-[16px]
                     `}
                   />
 
                   {/* =================================================
                       NUMBER
                   ================================================= */}
+
                   <motion.span
                     animate={{
                       scale: isActive ? 1.06 : 1,
@@ -171,11 +223,16 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                       sm:h-[30px]
                       sm:w-[30px]
                       ${arial}
+
                       ${
                         isActive
                           ? "border-white bg-[#1FB877] text-white shadow-[0_0_0_3px_rgba(31,184,119,0.22)]"
                           : "border-[#E6E6E6] bg-white text-[#8A8A8A]"
                       }
+
+                      min-[1600px]:h-[34px]
+                      min-[1600px]:w-[34px]
+                      min-[1600px]:text-[14px]
                     `}
                   >
                     {String(i + 1).padStart(2, "0")}
@@ -183,15 +240,13 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
 
                   {/* =================================================
                       STEP CARD
+                      ACTIVE CHANGES ON SCROLL
                   ================================================= */}
-                  <motion.button
-                    type="button"
-                    onMouseEnter={() => setActive(i)}
-                    onFocus={() => setActive(i)}
-                    onClick={() => setActive(i)}
-                    aria-current={isActive ? "step" : undefined}
+
+                  <motion.div
+                    initial={false}
                     whileHover={{
-                      y: isActive ? 0 : -2,
+                      y: -2,
                     }}
                     transition={{
                       duration: 0.2,
@@ -201,7 +256,6 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                       isolate
                       min-w-0
                       flex-1
-                      cursor-pointer
                       overflow-hidden
                       rounded-[12px]
                       px-[16px]
@@ -210,9 +264,6 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                       text-left
                       transition-shadow
                       duration-500
-                      focus-visible:outline-none
-                      focus-visible:ring-2
-                      focus-visible:ring-[#1FB877]
                       sm:px-[20px]
                       sm:pb-[22px]
                       sm:pt-[20px]
@@ -220,16 +271,23 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                       lg:pb-[24px]
                       lg:pt-[21px]
                       ${arial}
+
                       ${
                         isActive
                           ? "shadow-[0_12px_30px_rgba(0,0,0,0.22)]"
-                          : "bg-white shadow-[0_3px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_7px_20px_rgba(0,0,0,0.10)]"
+                          : "bg-white shadow-[0_3px_12px_rgba(0,0,0,0.05)]"
                       }
+
+                      min-[1600px]:rounded-[15px]
+                      min-[1600px]:px-[30px]
+                      min-[1600px]:pb-[30px]
+                      min-[1600px]:pt-[27px]
                     `}
                   >
                     {/* =================================================
                         BACKGROUND IMAGE
                     ================================================= */}
+
                     <motion.span
                       aria-hidden="true"
                       className="absolute inset-0 z-0"
@@ -250,7 +308,7 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                       }}
                     >
                       <img
-                        src={activeImage}
+                        src={step.image || activeImage}
                         alt=""
                         loading="lazy"
                         decoding="async"
@@ -263,7 +321,6 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                         "
                       />
 
-                      {/* Image overlay */}
                       <span
                         className="
                           absolute
@@ -276,11 +333,14 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                     {/* =================================================
                         CARD CONTENT
                     ================================================= */}
+
                     <span
                       className={`
                         relative
                         z-10
                         block
+                        pl-[10px]
+                        py-[5px]
                         text-[16px]
                         font-bold
                         leading-[25px]
@@ -290,13 +350,16 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                         sm:leading-[27px]
                         lg:text-[20px]
                         lg:leading-[28px]
-                        pl-[10px]
-                         py-[5px]
+
                         ${
                           isActive
                             ? "text-white"
                             : "text-[#1F2A28]"
                         }
+
+                        min-[1600px]:pl-[12px]
+                        min-[1600px]:text-[23px]
+                        min-[1600px]:leading-[31px]
                       `}
                     >
                       {step.title}
@@ -307,10 +370,10 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                         relative
                         z-10
                         mt-[6px]
-                        pl-[10px]
-                         pb-[5px]
                         block
                         max-w-[92%]
+                        pl-[10px]
+                        pb-[5px]
                         text-[13.5px]
                         leading-[21px]
                         transition-colors
@@ -320,16 +383,22 @@ function EpcProcess({ tag, title, text, steps, activeImage }) {
                         lg:mt-[8px]
                         lg:text-[16px]
                         lg:leading-[25px]
+
                         ${
                           isActive
                             ? "text-white/90"
                             : "text-[#707070]"
                         }
+
+                        min-[1600px]:mt-[10px]
+                        min-[1600px]:pl-[12px]
+                        min-[1600px]:text-[18px]
+                        min-[1600px]:leading-[29px]
                       `}
                     >
                       {step.text}
                     </span>
-                  </motion.button>
+                  </motion.div>
                 </li>
               );
             })}

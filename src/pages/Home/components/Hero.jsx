@@ -44,7 +44,7 @@ const capabilities = [
 ========================================================= */
 
 const tagClass =
-  "inline-flex h-[42px] items-center justify-center rounded-full border border-white/20 bg-[#465060]/65 px-[22px] font-roboto text-[15px] font-semibold !text-white backdrop-blur-[2px] transition-all duration-300 hover:border-[#69CF6C] hover:bg-[#69CF6C] hover:!text-white active:scale-[0.97] sm:h-[44px] sm:px-[27px] sm:text-[16px]";
+  "inline-flex h-[42px] items-center justify-center rounded-full border border-white/20 bg-[#465060]/65 px-[22px] font-roboto text-[15px] font-semibold !text-white backdrop-blur-[2px] transition-all duration-300 hover:border-[#69CF6C] hover:bg-[#69CF6C] hover:!text-white active:scale-[0.97] sm:h-[44px] sm:px-[27px] sm:text-[16px] lg:h-[clamp(44px,3vw,50px)] lg:px-[clamp(25px,2vw,32px)] lg:text-[clamp(16px,1.1vw,18px)]";
 
 /* =========================================================
    CTA BUTTONS
@@ -54,10 +54,10 @@ const tagClass =
 ========================================================= */
 
 const primaryBtn =
-  "inline-flex h-[52px] items-center justify-center whitespace-nowrap rounded-full border border-white/30 bg-transparent px-[22px] font-roboto text-[15px] font-bold !text-white transition-colors duration-300 hover:border-[#FFC629] hover:!text-[#FFC629] active:border-[#FFC629] active:!text-[#FFC629] active:scale-[0.97] sm:h-[58px] sm:px-[23px] sm:text-[16px]";
+  "inline-flex h-[52px] items-center justify-center whitespace-nowrap rounded-full border border-white/30 bg-transparent px-[22px] font-roboto text-[15px] font-bold !text-white transition-colors duration-300 hover:border-[#FFC629] hover:!text-[#FFC629] active:border-[#FFC629] active:!text-[#FFC629] active:scale-[0.97] sm:h-[58px] sm:px-[23px] sm:text-[16px] lg:h-[clamp(56px,3.4vw,64px)] lg:px-[clamp(24px,2vw,32px)] lg:text-[clamp(16px,1.05vw,18px)]";
 
 const outlineBtn =
-  "inline-flex h-[52px] items-center justify-center whitespace-nowrap rounded-full border border-white/30 bg-transparent px-[22px] font-roboto text-[15px] font-bold !text-white transition-colors duration-300 hover:border-[#FFC629] hover:!text-[#FFC629] active:border-[#FFC629] active:!text-[#FFC629] active:scale-[0.97] sm:h-[58px] sm:px-[23px] sm:text-[16px]";
+  "inline-flex h-[52px] items-center justify-center whitespace-nowrap rounded-full border border-white/30 bg-transparent px-[22px] font-roboto text-[15px] font-bold !text-white transition-colors duration-300 hover:border-[#FFC629] hover:!text-[#FFC629] active:border-[#FFC629] active:!text-[#FFC629] active:scale-[0.97] sm:h-[58px] sm:px-[23px] sm:text-[16px] lg:h-[clamp(56px,3.4vw,64px)] lg:px-[clamp(24px,2vw,32px)] lg:text-[clamp(16px,1.05vw,18px)]";
 
 /* =========================================================
    CAPABILITY BORDERS
@@ -85,7 +85,7 @@ function Hero() {
         overflow-hidden
         bg-[#0A2236]
         sm:min-h-[600px]
-        lg:min-h-[585px]
+        lg:min-h-[clamp(585px,40vw,700px)]
       "
     >
       {/* =====================================================
@@ -124,6 +124,7 @@ function Hero() {
           inset-x-0
           bottom-0
           h-36
+          lg:h-[clamp(144px,10vw,180px)]
           bg-gradient-to-t
           from-[#04182A]/80
           to-transparent
@@ -135,31 +136,30 @@ function Hero() {
       ====================================================== */}
 
       <div
-  className="
-    relative
-    z-10
-    mx-auto
-    flex
-    w-[90%]
-    max-w-[1190px]
-    flex-1
-    items-start
-    pt-[40px]
-    pb-[5px]
-    sm:pt-[49px]
-    lg:pt-[75px]
-    lg:pb-[5px]
-  "
->
-
+        className="
+          relative
+          z-10
+          mx-auto
+          flex
+          w-[92%]
+          max-w-[1500px]
+          flex-1
+          items-start
+          pt-[40px]
+          pb-[5px]
+          sm:pt-[49px]
+          lg:pt-[clamp(60px,5vw,90px)]
+          lg:pb-[8px]
+        "
+      >
         <div
           className="
             grid
             w-full
             items-start
             gap-7
-            lg:grid-cols-[minmax(0,1fr)_380px]
-            lg:gap-8
+            lg:grid-cols-[minmax(0,1fr)_clamp(380px,30vw,470px)]
+            lg:gap-[clamp(32px,4vw,70px)]
           "
         >
           {/* =================================================
@@ -178,17 +178,15 @@ function Hero() {
 
             <h1
               className="
-                max-w-[700px]
+                max-w-[850px]
                 font-manrope
                 text-[31px]
                 font-semibold
                 leading-[1.12]
                 !text-white
                 sm:text-[40px]
-                lg:text-[46px]
-                lg:leading-[1.08]
-                min-[1200px]:text-[52px]
-                min-[1200px]:leading-[55px]
+                lg:text-[clamp(48px,3.5vw,64px)]
+                lg:leading-[1.06]
               "
             >
               Powering a Smarter, More Resilient Energy Future.
@@ -199,16 +197,16 @@ function Hero() {
             <p
               className="
                 mt-[13px]
-                max-w-[690px]
+                max-w-[760px]
                 font-roboto
                 text-[15px]
                 font-medium
                 leading-[1.65]
                 !text-white
                 sm:text-[16px]
-                lg:mt-[15px]
-                lg:text-[17px]
-                lg:leading-[27px]
+                lg:mt-[clamp(15px,1.3vw,22px)]
+                lg:text-[clamp(17px,1.15vw,20px)]
+                lg:leading-[1.65]
               "
             >
               SmartSun Solar delivers innovative, reliable solar energy systems
@@ -226,7 +224,8 @@ function Hero() {
                 flex-wrap
                 gap-[12px]
                 sm:gap-[18px]
-                lg:mt-[28px]
+                lg:mt-[clamp(26px,2vw,34px)]
+                lg:gap-[clamp(14px,1.3vw,22px)]
               "
             >
               {tags.map((tag, index) => (
@@ -263,7 +262,8 @@ function Hero() {
                 flex-wrap
                 gap-x-[18px]
                 gap-y-3
-                lg:mt-[18px]
+                lg:mt-[clamp(18px,1.5vw,25px)]
+                lg:gap-x-[clamp(18px,1.5vw,28px)]
               "
             >
               <Link to="/contact-us" className={primaryBtn}>
@@ -294,7 +294,7 @@ function Hero() {
             }}
             className="
               w-full
-              max-w-[380px]
+              max-w-[470px]
               justify-self-start
               rounded-[8px]
               border
@@ -305,6 +305,9 @@ function Hero() {
               pt-[15px]
               shadow-[0_8px_25px_rgba(0,0,0,0.16)]
               backdrop-blur-[7px]
+              lg:px-[clamp(22px,2vw,32px)]
+              lg:pb-[clamp(22px,2vw,32px)]
+              lg:pt-[clamp(16px,1.3vw,22px)]
               lg:justify-self-end
             "
           >
@@ -317,6 +320,8 @@ function Hero() {
                 font-medium
                 leading-[28px]
                 !text-white/65
+                lg:text-[clamp(17px,1.15vw,20px)]
+                lg:leading-[1.6]
               "
             >
               Live Solar Stats
@@ -331,6 +336,9 @@ function Hero() {
                 grid-cols-2
                 gap-x-[20px]
                 gap-y-[12px]
+                lg:mt-[clamp(10px,0.8vw,16px)]
+                lg:gap-x-[clamp(20px,2vw,30px)]
+                lg:gap-y-[clamp(12px,1vw,18px)]
               "
             >
               {stats.map((s, index) => (
@@ -351,6 +359,8 @@ function Hero() {
                       font-medium
                       leading-[22px]
                       !text-white/60
+                      lg:text-[clamp(14px,0.9vw,17px)]
+                      lg:leading-[1.55]
                     "
                   >
                     {s.label}
@@ -364,6 +374,8 @@ function Hero() {
                       font-bold
                       leading-[31px]
                       !text-white
+                      lg:text-[clamp(23px,1.7vw,29px)]
+                      lg:leading-[1.3]
                     "
                   >
                     {s.value}
@@ -377,6 +389,8 @@ function Hero() {
                       font-medium
                       leading-[22px]
                       !text-white/55
+                      lg:text-[clamp(14px,0.9vw,17px)]
+                      lg:leading-[1.55]
                     "
                   >
                     {s.note}
@@ -387,7 +401,13 @@ function Hero() {
 
             {/* Energy Source */}
 
-            <div className="mt-[18px] px-[9px]">
+            <div
+              className="
+                mt-[18px]
+                px-[9px]
+                lg:mt-[clamp(18px,1.5vw,26px)]
+              "
+            >
               <p
                 className="
                   font-roboto
@@ -395,6 +415,7 @@ function Hero() {
                   font-medium
                   leading-[27px]
                   !text-white/75
+                  lg:text-[clamp(16px,1vw,19px)]
                 "
               >
                 Energy Source
@@ -408,6 +429,7 @@ function Hero() {
                   overflow-hidden
                   rounded-full
                   bg-white/90
+                  lg:h-[clamp(10px,0.7vw,13px)]
                 "
               >
                 <motion.span
@@ -441,8 +463,8 @@ function Hero() {
           relative
           z-10
           mx-auto
-          w-[90%]
-          max-w-[1190px]
+          w-[92%]
+          max-w-[1500px]
         "
       >
         <div
@@ -466,9 +488,9 @@ function Hero() {
                 transition-colors
                 duration-300
                 hover:bg-white/[0.035]
-                lg:py-[12px]
-                lg:pl-[20px]
-                lg:pr-[17px]
+                lg:py-[clamp(12px,1vw,18px)]
+                lg:pl-[clamp(20px,1.5vw,28px)]
+                lg:pr-[clamp(17px,1.3vw,25px)]
                 ${cellBorders(i)}
               `}
             >
@@ -479,7 +501,8 @@ function Hero() {
                   font-bold
                   leading-[22px]
                   text-[#FFC629]
-                  lg:text-[16px]
+                  lg:text-[clamp(15px,1vw,18px)]
+                  lg:leading-[1.45]
                 "
               >
                 {c.title}
@@ -491,8 +514,8 @@ function Hero() {
                   text-[14px]
                   leading-[22px]
                   !text-white
-                  lg:text-[15px]
-                  lg:leading-[23px]
+                  lg:text-[clamp(14px,0.95vw,17px)]
+                  lg:leading-[1.5]
                 "
               >
                 {c.text}

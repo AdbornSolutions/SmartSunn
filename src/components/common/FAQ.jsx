@@ -41,26 +41,32 @@ function FAQ() {
 
   return (
     <section className="w-full overflow-hidden bg-[#061E2D]">
-      {/* HEADER */}
+      {/* ============================================================
+          HEADER
+      ============================================================ */}
+
       <div
         className="
           mx-auto
           w-full
           px-[20px]
-          pb-[36px]
-          pt-[42px]
+          pb-[42px]
+          pt-[48px]
 
           sm:px-[28px]
-          sm:pb-[40px]
-          sm:pt-[46px]
+          sm:pb-[46px]
+          sm:pt-[52px]
 
           md:px-[40px]
-          md:pb-[44px]
-          md:pt-[50px]
+          md:pb-[52px]
+          md:pt-[58px]
 
           lg:px-[50px]
-          lg:pb-[48px]
-          lg:pt-[54px]
+          lg:pb-[58px]
+          lg:pt-[64px]
+
+          min-[1600px]:pb-[68px]
+          min-[1600px]:pt-[78px]
         "
       >
         <div className="text-center">
@@ -68,16 +74,20 @@ function FAQ() {
           <p
             className="
               m-0
-              text-[10px]
+              text-[11px]
               font-semibold
               uppercase
               leading-[1.2]
               tracking-[0.15em]
               text-[#08B477]
 
-              sm:text-[11px]
+              sm:text-[12px]
 
-              md:text-[12px]
+              md:text-[13px]
+
+              lg:text-[14px]
+
+              min-[1600px]:text-[15px]
             "
           >
             FAQ
@@ -87,18 +97,21 @@ function FAQ() {
           <h1
             className="
               m-0
-              mt-[10px]
-              text-[30px]
+              mt-[12px]
+              text-[32px]
               font-bold
               leading-[1.1]
               tracking-[-0.025em]
               text-white
 
-              sm:text-[34px]
+              sm:text-[36px]
 
-              md:text-[38px]
+              md:text-[40px]
 
-              lg:text-[40px]
+              lg:text-[44px]
+
+              min-[1600px]:mt-[16px]
+              min-[1600px]:text-[52px]
             "
           >
             Frequently Asked Questions
@@ -106,7 +119,10 @@ function FAQ() {
         </div>
       </div>
 
-      {/* FAQ CONTAINER */}
+      {/* ============================================================
+          FAQ CONTAINER
+      ============================================================ */}
+
       <div
         className="
           mx-auto
@@ -114,10 +130,16 @@ function FAQ() {
           max-w-[1000px]
 
           sm:w-[calc(100%-56px)]
+          sm:max-w-[1050px]
 
           md:w-[calc(100%-80px)]
+          md:max-w-[1100px]
 
-          lg:w-[800px]
+          lg:w-[900px]
+          lg:max-w-[900px]
+
+          min-[1600px]:w-[1000px]
+          min-[1600px]:max-w-[1000px]
         "
       >
         <div className="w-full">
@@ -136,53 +158,63 @@ function FAQ() {
                   last:border-b
                 "
               >
-                {/* QUESTION */}
+                {/* ==================================================
+                    QUESTION
+                ================================================== */}
+
                 <button
                   type="button"
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={isOpen}
                   className="
                     flex
-                    min-h-[65px]
+                    min-h-[70px]
                     w-full
                     items-center
                     justify-between
                     gap-[30px]
-                    py-[16px]
+                    py-[17px]
                     pl-[5px]
                     pr-[40px]
 
-                    sm:min-h-[68px]
+                    sm:min-h-[74px]
                     sm:pl-[42px]
                     sm:pr-[42px]
 
-                    md:min-h-[70px]
+                    md:min-h-[76px]
                     md:pl-[44px]
                     md:pr-[44px]
 
-                    lg:min-h-[66px]
+                    lg:min-h-[74px]
                     lg:pl-[40px]
                     lg:pr-[40px]
+
+                    min-[1600px]:min-h-[82px]
+                    min-[1600px]:pl-[44px]
+                    min-[1600px]:pr-[44px]
                   "
                 >
                   {/* QUESTION */}
                   <span
                     className="
                       min-w-0
-                      pr-[10px]
                       pl-[20px]
+                      pr-[10px]
                       text-left
                       font-manrope
-                      text-[15px]
+                      text-[16px]
                       font-medium
                       leading-[1.4]
                       text-white
 
-                      sm:text-[16px]
+                      sm:text-[17px]
 
-                      md:text-[17px]
+                      md:text-[18px]
 
-                      lg:text-[17px]
+                      lg:text-[18px]
+
+                      min-[1600px]:pl-[22px]
+                      min-[1600px]:text-[20px]
                     "
                   >
                     {faq.question}
@@ -192,17 +224,21 @@ function FAQ() {
                   <span
                     className="
                       flex
-                      h-[30px]
-                      pr-[20px]
-                      w-[30px]
+                      h-[32px]
+                      w-[32px]
                       shrink-0
                       items-center
                       justify-center
+                      pr-[20px]
                       font-roboto
-                      text-[29px]
+                      text-[30px]
                       font-light
                       leading-none
                       text-white
+
+                      min-[1600px]:h-[34px]
+                      min-[1600px]:w-[34px]
+                      min-[1600px]:text-[32px]
                     "
                     aria-hidden="true"
                   >
@@ -212,7 +248,10 @@ function FAQ() {
                   </span>
                 </button>
 
-                {/* ANSWER */}
+                {/* ==================================================
+                    ANSWER
+                ================================================== */}
+
                 <div
                   className={`
                     grid
@@ -235,26 +274,31 @@ function FAQ() {
                           m-0
                           px-[40px]
                           pb-[40px]
-                          
-                          pt-[17px]
+                          pt-[18px]
                           text-left
                           font-manrope
-                          text-[13px]
+                          text-[14px]
                           font-normal
                           leading-[1.65]
                           text-[#9BAEB7]
 
                           sm:px-[42px]
                           sm:pb-[42px]
-                          sm:text-[14px]
+                          sm:text-[15px]
 
                           md:px-[44px]
                           md:pb-[44px]
-                          md:text-[15px]
+                          md:text-[16px]
 
                           lg:px-[40px]
                           lg:pb-[43px]
-                          lg:text-[15px]
+                          lg:text-[16px]
+
+                          min-[1600px]:px-[44px]
+                          min-[1600px]:pb-[48px]
+                          min-[1600px]:pt-[20px]
+                          min-[1600px]:text-[17px]
+                          min-[1600px]:leading-[1.7]
                         "
                       >
                         {faq.answer}
@@ -268,20 +312,29 @@ function FAQ() {
         </div>
       </div>
 
-      {/* CONTACT LINK */}
+      {/* ============================================================
+          CONTACT LINK
+      ============================================================ */}
+
       <div
         className="
           flex
           justify-center
           px-[20px]
-          pb-[42px]
-          pt-[34px]
+          pb-[48px]
+          pt-[38px]
 
-          sm:pb-[46px]
-          sm:pt-[36px]
+          sm:pb-[52px]
+          sm:pt-[40px]
 
-          md:pb-[50px]
-          md:pt-[38px]
+          md:pb-[56px]
+          md:pt-[44px]
+
+          lg:pb-[60px]
+          lg:pt-[48px]
+
+          min-[1600px]:pb-[70px]
+          min-[1600px]:pt-[52px]
         "
       >
         <Link
@@ -292,7 +345,7 @@ function FAQ() {
             justify-center
             text-center
             font-roboto
-            text-[11px]
+            text-[12px]
             font-normal
             leading-[1.3]
             text-[#0CAF73]
@@ -300,9 +353,13 @@ function FAQ() {
             duration-200
             hover:text-[#FFC329]
 
-            sm:text-[12px]
+            sm:text-[13px]
 
-            md:text-[13px]
+            md:text-[14px]
+
+            lg:text-[14px]
+
+            min-[1600px]:text-[15px]
           "
         >
           <span className="font-semibold">
@@ -313,7 +370,7 @@ function FAQ() {
             Contact our experts
           </span>
 
-          <span className="ml-[5px] text-[15px]">
+          <span className="ml-[5px] text-[16px]">
             →
           </span>
         </Link>
