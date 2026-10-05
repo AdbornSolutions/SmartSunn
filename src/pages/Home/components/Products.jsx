@@ -10,7 +10,7 @@ const products = [
   {
     name: "SunMax Pro 550W",
     category: "Monocrystalline Panel",
-    image: "/images/products/product-1.jpg",
+    image: "/images/products/product-1.png",
   },
   {
     name: "VoltSync Hybrid 8kW",
@@ -30,12 +30,12 @@ const products = [
   {
     name: "Smart Optimizer",
     category: "Power Optimizer",
-    image: "/images/products/product-1.jpg",
+    image: "/images/products/product-5.png",
   },
   {
     name: "Home Energy Hub",
     category: "Smart Energy System",
-    image: "/images/products/product-2.png",
+    image: "/images/products/product-6.png",
   },
 ];
 
